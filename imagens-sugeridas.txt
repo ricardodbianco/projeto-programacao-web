@@ -1,0 +1,41 @@
+# Imagens Sugeridas para a Papelaria Online
+
+## Banner Principal
+https://images.unsplash.com/photo-1573594185838-5287cd24fdb0?q=80&w=2070 (Material Escolar)
+https://images.unsplash.com/photo-1627999698547-f78577aaf9dd?q=80&w=2070 (Estudo e Escritório)
+
+## Produtos
+1. Caderno Universitário:
+https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=2070
+
+2. Estojo Completo:
+https://images.unsplash.com/photo-1576613109753-27804de2cba8?q=80&w=2070
+
+3. Canetas Esferográficas:
+https://images.unsplash.com/photo-1574359155811-def4d7f39a4e?q=80&w=1974
+
+4. Papel Sulfite A4:
+https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1973
+
+5. Kit Pintura Artística:
+https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071
+
+6. Mochila Escolar:
+https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=2072
+
+## Como usar estas imagens:
+1. Crie uma pasta 'assets' em seu projeto (se não existir)
+2. Baixe as imagens e salve-as com nomes correspondentes (caderno.jpg, estojo.jpg, etc.)
+3. Para usar online diretamente, você pode substituir o caminho da imagem no HTML:
+
+De:
+```html
+<img [src]="obj.imagem" alt="{{obj.nome}}">
+```
+
+Para:
+```html
+<img [src]="obj.imagem.startsWith('./assets') ? 'URL_DA_IMAGEM' : obj.imagem" alt="{{obj.nome}}">
+```
+
+Lembre-se de substituir 'URL_DA_IMAGEM' pela URL correspondente. 

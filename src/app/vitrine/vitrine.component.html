@@ -1,0 +1,92 @@
+<div class="papelaria-vitrine">
+  <!-- Banner principal -->
+  <div class="banner-principal mb-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h1 class="display-4">Papelaria Online</h1>
+          <p class="lead">Tudo para escola, escritório e arte com os melhores preços!</p>
+          <p>Entrega rápida e segura para todo o Brasil</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <img src="https://images.unsplash.com/photo-1573594185838-5287cd24fdb0?q=80&w=2070" alt="Banner Papelaria" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filtro de categorias -->
+  <div class="container">
+    <div class="category-filter mb-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Nossos Produtos</h2>
+        <div class="btn-group">
+          <button *ngFor="let cat of categorias" 
+                  class="btn" 
+                  [ngClass]="categoriaSelecionada === cat.id ? 'btn-primary' : 'btn-outline-primary'"
+                  (click)="filtrarPorCategoria(cat.id)">
+            {{cat.nome}}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensagem de status -->
+    <div *ngIf="mensagem" class="alert alert-info mb-4">{{mensagem}}</div>
+
+    <!-- Lista de produtos -->
+    <div class="row g-4" *ngIf="getProdutosFiltrados().length > 0">
+      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let obj of getProdutosFiltrados()">
+        <div class="card h-100 product-card">
+          <div class="product-badge" *ngIf="obj.valorPromo < obj.valor">
+            <span class="badge bg-danger">Oferta!</span>
+          </div>
+          <div class="product-badge out-of-stock" *ngIf="obj.quantidade <= 0">
+            <span class="badge bg-secondary">Sem estoque</span>
+          </div>
+          <img class="card-img-top product-img" [src]="obj.imagem" alt="{{obj.nome}}">
+          <div class="card-body d-flex flex-column">
+            <div class="card-category text-muted small mb-2">
+              {{obj.categoria === 'escolar' ? 'Material Escolar' : 
+                obj.categoria === 'escritorio' ? 'Escritório' : 
+                obj.categoria === 'arte' ? 'Artes e Pintura' : ''}}
+            </div>
+            <h5 class="card-title">{{obj.nome}}</h5>
+            <p class="card-text flex-grow-1">{{obj.descritivo}}</p>
+            
+            <div class="product-price mb-3">
+              <div *ngIf="obj.valorPromo >= obj.valor" class="regular-price">
+                R$ {{obj.valor.toFixed(2).replace('.', ',')}}
+              </div>
+              <div *ngIf="obj.valorPromo < obj.valor" class="promo-price">
+                <span class="old-price">R$ {{obj.valor.toFixed(2).replace('.', ',')}}</span>
+                <span class="new-price">R$ {{obj.valorPromo.toFixed(2).replace('.', ',')}}</span>
+              </div>
+            </div>
+            
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-outline-primary" 
+                     [disabled]="obj.quantidade <= 0"
+                     (click)="carregar(obj)">
+                Detalhes
+              </button>
+              
+              <button class="btn btn-primary" 
+                     [disabled]="obj.quantidade <= 0"
+                     (click)="comprar(obj)">
+                <i class="bi bi-cart-plus"></i> Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mensagem quando não há produtos -->
+    <div class="alert alert-warning" *ngIf="getProdutosFiltrados().length === 0">
+      Não encontramos produtos nesta categoria. Tente outra opção.
+    </div>
+  </div>
+</div>
+
+

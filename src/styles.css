@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+body {
+    background-color: silver;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+h1, h2, h3, h4 { color: yellow; text-shadow: 2px 2px black;}
+input, select,textarea {
+    background-color: yellow;
+    border: solid 1px black;
+    margin: 5px;
+    color: black; 
+    padding: 3px;
+}
+nav{ background-color: gray; padding: 5px;}
+nav a {color:white; text-decoration: none;}
+
+#msg { width: 80%;  height: 10vh;  background-color: orangered; }
+button {
+      width: 15%;
+      background-color: white;
+      border:solid 1px black;
+      padding: 10px;
+      border-radius: 5px;  
+      margin:5px;
+}
+button:hover{ box-shadow: 2px 2px gray; font-weight: bold; }
+.janela 
+{
+    background-color: gray;
+    color:white;
+    width:80%;
+    margin: auto;
+    padding: 5px;
+    border: solid 2px white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+label{width: 100px; display: inline-table;
+     text-align: right;
+    vertical-align: top;}
+
+@media screen and (orientation: portrait) {
+    .janela{width: 100%;border: 0;}
+    input, select, textarea{width: 90%; font-size: large; padding:10px;  }
+    button {width: 90%;}
+    #msg{width: 90%;}
+    nav {display: none;}
+    label{text-align: left;}
+}
+*/
+/* 
+footer { 
+    background-color: black;
+     color:white; 
+     text-align: center;
+    height: 10vh;
+    padding: 10px;
+} */

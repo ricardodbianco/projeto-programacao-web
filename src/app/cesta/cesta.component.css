@@ -1,0 +1,45 @@
+.card {
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background-color: #007bff;
+  border-bottom: 0;
+}
+
+.table-responsive {
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.img-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table tfoot {
+  font-weight: bold;
+}
+
+.alert {
+  border-radius: 4px;
+}

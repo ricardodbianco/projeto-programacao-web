@@ -1,0 +1,158 @@
+.card {
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
+  padding: 1.25rem 1.5rem;
+}
+
+.bg-primary {
+  background-color: #007bff !important;
+}
+
+.info-card .card-body {
+  padding: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f0f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  color: #007bff;
+}
+
+.icon-wrapper i {
+  font-size: 1.5rem;
+}
+
+.contact-info h5 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-info p {
+  margin-bottom: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.social-media {
+  margin-top: 1rem;
+}
+
+.social-media h5 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.facebook {
+  background-color: #1877f2;
+}
+
+.instagram {
+  background-color: #e1306c;
+}
+
+.whatsapp {
+  background-color: #25d366;
+}
+
+.youtube {
+  background-color: #ff0000;
+}
+
+.form-card .card-body {
+  padding: 2rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #444;
+}
+
+.form-control, .form-select {
+  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .contact-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon-wrapper i {
+    font-size: 1.25rem;
+  }
+}
