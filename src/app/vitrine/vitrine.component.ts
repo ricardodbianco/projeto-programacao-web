@@ -53,7 +53,7 @@ export class VitrineComponent {
       valor: 25.90, 
       valorPromo: 19.90, 
       quantidade: 100,
-      categoria: "escritorio",
+      categoria: "escolar",
       imagem: "https://m.media-amazon.com/images/I/8155f0I1vtL._AC_UF894,1000_QL80_.jpg"
     },
     {
@@ -73,7 +73,7 @@ export class VitrineComponent {
       valor: 319.90, 
       valorPromo: 310.00, 
       quantidade: 0,
-      categoria: "escolar",
+      categoria: "escritorio",
       imagem: "https://images.unsplash.com/photo-1454037439427-fdeaf232d3ce?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
