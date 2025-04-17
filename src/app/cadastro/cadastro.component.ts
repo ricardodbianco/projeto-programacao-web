@@ -57,8 +57,6 @@ export class CadastroComponent {
       // Definir a data de cadastro
       this.obj.dataCadastro = new Date();
       
-      // Definir se autoriza envio baseado no checkbox
-      this.obj.autorizo = this.autorizaEnvio;
       
       console.log("Cliente a ser cadastrado:", this.obj);
       

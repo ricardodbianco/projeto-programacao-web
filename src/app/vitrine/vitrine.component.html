@@ -39,7 +39,7 @@
       <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let obj of getProdutosFiltrados()">
         <div class="card h-100 product-card">
           <div class="product-badge" *ngIf="obj.valorPromo < obj.valor">
-            <span class="badge bg-danger">Oferta!</span>
+            <span class="badge bg-danger" *ngIf="obj.quantidade > 0" >Oferta!</span>
           </div>
           <div class="product-badge out-of-stock" *ngIf="obj.quantidade <= 0">
             <span class="badge bg-secondary">Sem estoque</span>
@@ -54,7 +54,7 @@
             <h5 class="card-title">{{obj.nome}}</h5>
             <p class="card-text flex-grow-1">{{obj.descritivo}}</p>
             
-            <div class="product-price mb-3">
+            <div class="product-price mb-3" *ngIf="obj.quantidade > 0" >
               <div *ngIf="obj.valorPromo >= obj.valor" class="regular-price">
                 R$ {{obj.valor.toFixed(2).replace('.', ',')}}
               </div>
@@ -66,14 +66,14 @@
             
             <div class="d-flex justify-content-between">
               <button class="btn btn-outline-primary" 
-                     [disabled]="obj.quantidade <= 0"
+                     *ngIf="obj.quantidade>0"
                      (click)="carregar(obj)">
                 Detalhes
               </button>
               
               <button class="btn btn-primary" 
-                     [disabled]="obj.quantidade <= 0"
-                     (click)="comprar(obj)">
+                    *ngIf="obj.quantidade>0"
+                    (click)="comprar(obj)">
                 <i class="bi bi-cart-plus"></i> Comprar
               </button>
             </div>

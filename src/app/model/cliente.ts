@@ -3,9 +3,8 @@ export class Cliente {
    public nome: string = "";
    public email: string = "";
    public telefone: string = "";
-   public documento: string = "";
+   public cpf: string = "";
    public endereco: string = "";
    public senha: string = "";
-   public autorizo: boolean = false;
    public dataCadastro: Date = new Date();
 }
