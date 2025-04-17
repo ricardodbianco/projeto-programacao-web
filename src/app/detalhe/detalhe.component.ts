@@ -1,34 +1,39 @@
-import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Produto } from '../model/produto';
+import { Cesta } from '../model/cesta';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-detalhe',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './detalhe.component.html',
-  styleUrl: './detalhe.component.css'
+  styleUrls: ['./detalhe.component.css']
 })
-export class DetalheComponent implements OnInit {
+export class DetalheComponent {
   public obj: Produto = new Produto();
-  public mensagem: String = "";
-  private isBrowser: boolean;
+  public mensagem: string = "";
 
-  constructor(@Inject(PLATFORM_ID) platformId: Object) {
-    this.isBrowser = isPlatformBrowser(platformId);
+  constructor(private router: Router) {
+    const json = localStorage.getItem("produto");
+    if (json === null) {
+      this.mensagem = "Produto não encontrado! Verifique.";
+    } else {
+      this.obj = JSON.parse(json);
+    }
   }
 
-  ngOnInit() {
-    if (this.isBrowser) {
-      let json = localStorage.getItem("produto");
-      if (json == null) {
-        this.mensagem = "Produto não encontrado! verifique";
-      } else {
-        this.obj = JSON.parse(json);
-      }
-    } else {
-      // No lado do servidor, mostramos uma mensagem de carregamento
-      this.mensagem = "Carregando detalhes do produto...";
-    }
+  public comprar(obj: Produto) {
+    let temp = new Cesta();
+    const json = localStorage.getItem("cesta");
+    if (json !== null) temp = JSON.parse(json);
+  
+    temp.itens.push(obj);
+    temp.total = temp.total + (obj.valorPromo < obj.valor ? obj.valorPromo : obj.valor);
+
+    localStorage.setItem("cesta", JSON.stringify(temp));
+
+    this.router.navigate(['/cesta']);
   }
 }

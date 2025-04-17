@@ -1,21 +1,26 @@
 <div class="papelaria-vitrine">
-  <!-- Banner principal -->
   <div class="banner-principal mb-4">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <h1 class="display-4">Papelaria Online</h1>
-          <p class="lead">Tudo para escola, escritório e arte com os melhores preços!</p>
-          <p>Entrega rápida e segura para todo o Brasil</p>
+          <h1 class="display-4">Papelaria do Tempo</h1>
+          <p class="lead">Materiais clássicos para escola, escritório e arte, com a qualidade que atravessa gerações.</p>
+          <p>Entrega ágil e segura, levando o charme do passado para todo o Brasil.</p>
         </div>
         <div class="col-md-6 text-end">
-          <img src="https://images.unsplash.com/photo-1573594185838-5287cd24fdb0?q=80&w=2070" alt="Banner Papelaria" class="img-fluid rounded shadow">
+          <img [src]="'https://images.unsplash.com/photo-1505744386214-51dba16a26fc?q=80&w=1306&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'" alt="Banner da Papelaria - TInteiro" class="img-fluid rounded shadow">
         </div>
+      </div>
+    </div>
+    <div class="citacao-container">
+      <div class="citacao-box">
+        <p class="citacao-texto">"Com a pena mergulhada no tinteiro, deixo que a tinta conte histórias que a alma ainda não teve coragem de dizer."</p>
+        <p class="citacao-autor">- Das memórias de um tinteiro esquecido.</p>
       </div>
     </div>
   </div>
 
-  <!-- Filtro de categorias -->
+  <!--categorias -->
   <div class="container">
     <div class="category-filter mb-4">
       <div class="d-flex justify-content-between align-items-center">
@@ -31,7 +36,6 @@
       </div>
     </div>
 
-    <!-- Mensagem de status -->
     <div *ngIf="mensagem" class="alert alert-info mb-4">{{mensagem}}</div>
 
     <!-- Lista de produtos -->
